@@ -33,7 +33,7 @@ class ChatCompletionRequest(BaseModel):
     logit_bias: Optional[Dict[str, float]] = None
     logprobs: Optional[bool] = False
     top_logprobs: Optional[int] = None
-    max_completion_tokens: Optional[int] = None  # Renamed for clarity
+    # max_completion_tokens: Optional[int] = None
     n: Optional[int] = 1
     presence_penalty: Optional[float] = 0.0
     response_format: Optional[Dict[str, Any]] = None
@@ -46,7 +46,7 @@ class ChatCompletionRequest(BaseModel):
     top_p: Optional[float] = 1.0
     tools: Optional[List[Dict[str, Any]]] = None
     tool_choice: Optional[Union[str, Dict[str, Any]]] = None
-    parallel_tool_calls: Optional[bool] = True
+    # parallel_tool_calls: Optional[bool] = True
     user: Optional[str] = None
     max_tokens: Optional[int] = 512  # Added max_tokens for backward compatibility
 
@@ -100,7 +100,7 @@ async def chat_completions(request: ChatCompletionRequest):
         logit_bias = data.get("logit_bias", None)
         logprobs = data.get("logprobs", False)
         top_logprobs = data.get("top_logprobs", None)
-        max_completion_tokens = data.get("max_completion_tokens", None)
+        # max_completion_tokens = data.get("max_completion_tokens", None)
         n = data.get("n", 1)
         response_format = data.get("response_format", None)
         seed = data.get("seed", None)
@@ -109,7 +109,7 @@ async def chat_completions(request: ChatCompletionRequest):
         stream_options = data.get("stream_options", None)
         tools = data.get("tools", None)
         tool_choice = data.get("tool_choice", None)
-        parallel_tool_calls = data.get("parallel_tool_calls", True)
+        # parallel_tool_calls = data.get("parallel_tool_calls", False)
         user_identifier = data.get("user", None)
 
         print(f"Incoming message: {user_content}")
@@ -138,7 +138,7 @@ async def chat_completions(request: ChatCompletionRequest):
             "logit_bias": logit_bias,
             "logprobs": logprobs,
             "top_logprobs": top_logprobs,
-            "max_completion_tokens": max_completion_tokens,
+            # "max_completion_tokens": max_completion_tokens,
             "n": n,
             "response_format": response_format,
             "seed": seed,
@@ -147,7 +147,7 @@ async def chat_completions(request: ChatCompletionRequest):
             "stream_options": stream_options,
             "tools": tools,
             "tool_choice": tool_choice,
-            "parallel_tool_calls": parallel_tool_calls,
+            # "parallel_tool_calls": parallel_tool_calls,
             "user": user_identifier,
         }
 
@@ -188,7 +188,7 @@ async def chat_completions(request: ChatCompletionRequest):
             "logit_bias": logit_bias,
             "logprobs": logprobs,
             "top_logprobs": top_logprobs,
-            "max_completion_tokens": max_completion_tokens,
+            # "max_completion_tokens": max_completion_tokens,
             "n": n,
             "response_format": response_format,
             "seed": seed,
@@ -197,7 +197,7 @@ async def chat_completions(request: ChatCompletionRequest):
             "stream_options": stream_options,
             "tools": tools,
             "tool_choice": tool_choice,
-            "parallel_tool_calls": parallel_tool_calls,
+            # "parallel_tool_calls": parallel_tool_calls,
             "user": user_identifier,
         }
 
