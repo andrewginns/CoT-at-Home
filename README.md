@@ -2,6 +2,11 @@
 
 This project provides an OpenAI-compatible API proxy that automatically adds Chain-of-Thought (CoT) reasoning, allowing you transparently add CoT to your use of any models.
 
+
+https://github.com/user-attachments/assets/2a0449d1-b95e-4741-85b9-33866372af8d
+
+
+
 ```mermaid
 flowchart LR
     A1([User Input]) --> CoT --> G1([Call API for Final Answer])
