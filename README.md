@@ -1,6 +1,6 @@
 # CoT at Home
 
-This project provides an OpenAI-compatible API proxy that automatically adds Chain-of-Thought (CoT) reasoning, allowing you transparently add CoT to your use of any models.
+This project enables any OpenAI-compatible API to automatically have Chain-of-Thought (CoT) reasoning. Allowing for transparently added CoT to use with any model.
 
 
 https://github.com/user-attachments/assets/2a0449d1-b95e-4741-85b9-33866372af8d
