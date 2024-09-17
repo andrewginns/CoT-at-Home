@@ -29,13 +29,13 @@ class Message(BaseModel):
 class ChatCompletionRequest(BaseModel):
     model: Optional[str] = "mock-gpt-model"
     messages: List[Message]
-    frequency_penalty: Optional[float] = 0.0
+    # frequency_penalty: Optional[float] = 0.0
     logit_bias: Optional[Dict[str, float]] = None
     logprobs: Optional[bool] = False
     top_logprobs: Optional[int] = None
     # max_completion_tokens: Optional[int] = None
     n: Optional[int] = 1
-    presence_penalty: Optional[float] = 0.0
+    # presence_penalty: Optional[float] = 0.0
     response_format: Optional[Dict[str, Any]] = None
     seed: Optional[int] = None
     service_tier: Optional[str] = None
@@ -95,8 +95,8 @@ async def chat_completions(request: ChatCompletionRequest):
         temperature = data.get("temperature", 1)
         max_tokens = data.get("max_tokens", 4096)
         top_p = data.get("top_p", 1)
-        frequency_penalty = data.get("frequency_penalty", 0.0)
-        presence_penalty = data.get("presence_penalty", 0.0)
+        # frequency_penalty = data.get("frequency_penalty", 0.0)
+        # presence_penalty = data.get("presence_penalty", 0.0)
         logit_bias = data.get("logit_bias", None)
         logprobs = data.get("logprobs", False)
         top_logprobs = data.get("top_logprobs", None)
@@ -133,8 +133,8 @@ async def chat_completions(request: ChatCompletionRequest):
             "temperature": temperature,
             "max_tokens": max_tokens,
             "top_p": top_p,
-            "frequency_penalty": frequency_penalty,
-            "presence_penalty": presence_penalty,
+            # "frequency_penalty": frequency_penalty,
+            # "presence_penalty": presence_penalty,
             "logit_bias": logit_bias,
             "logprobs": logprobs,
             "top_logprobs": top_logprobs,
@@ -183,8 +183,8 @@ async def chat_completions(request: ChatCompletionRequest):
             "temperature": temperature,
             "max_tokens": max_tokens,
             "top_p": top_p,
-            "frequency_penalty": frequency_penalty,
-            "presence_penalty": presence_penalty,
+            # "frequency_penalty": frequency_penalty,
+            # "presence_penalty": presence_penalty,
             "logit_bias": logit_bias,
             "logprobs": logprobs,
             "top_logprobs": top_logprobs,
